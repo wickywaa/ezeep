@@ -38,7 +38,7 @@ const getAccessToken= (code,encodedClientId,callback)=>{
 
 
 }
-
+// remember to ansure you do not request a  refesh token with each call this will slow your application down, wait until you get a client invalid response then request a new token
 
 const getRefreshtoken =(token,encodedid,callback)=>{
 
