@@ -1,23 +1,23 @@
 const axios = require('axios');
-const FormData = require('form-data');
-const data = new FormData();
+
+
 const open = require('open');
 
-const newclientid = 'zV2gpuxma9GRLJpyxAwew0sOPjjDrt5AKYdweCLX'
-const myClientId = 'RHEZRf7afQBlJZ6BzSzQ7JHIXVwObvrJGYVnJxt0'
-const devClientid = 'HHHbxyDH1wxHbl01ZA6Y7vSs70Cc7NDU7Su4MISc'
-const newestclientid = '2ATwQCdROTS4pHedN0bHtEAA5c3qCXST7loxJ5fS'
+
+const myClientId = '<enter client id here>'
 
 
 
-const clientID  = devClientid;
-const localhostUri = "http://localhost:3000/code"
-const redirect_uri  = 'https://www.ezeep.com';
+
+
+
+const redirect_uri  = 'enter your redirect uri ';
 const baseurl =  "https://account.ezeep.com";
 
 
-const sedhourl  = "https://global.consent.azure-apim.net/redirect"
-const sedhoid =  "bGJq8iyyVS9XMIbBptaqZwJYWbkYeEOnv6r3SfwT"
+// this is a function to open up the browser  and redriect to authenticate the user
+// I use this for testing and I send the auth code to my local host endpoint or I can copy and paste from ur query parameters
+
 
 
 
@@ -42,12 +42,11 @@ const getCode=(ID,URI)=>{
 
 
 
-//getCode(myClientId,redirect_uri)
+
 
 getCode(myClientId,redirect_uri)
 
 
 
-//
 
            
