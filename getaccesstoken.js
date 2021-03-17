@@ -1,12 +1,11 @@
 var axios = require('axios');
-var FormData = require('form-data');
+
 var qs = require('qs')
-var fs = require('fs')
-var path = require('path')
 
 
-const encodedclientid = "YkdKcThpeXlWUzlYTUliQnB0YXFad0pZV2JrWWVFT252NnIzU2Z3VDpJVWxXYkF0NXN1bjE1RElDYWJBTXl4dk9EQjdTSTF5aTNBeThmZjl1d01MSHZDSG9oaVZnb24yWHBUcWdGZ1AyQU52TzVHSHk1VENjdzZYN01kamVzckFwYnhpSDZqWGJiTXpoZGdJdVBRMFlHRzlkNGhpQlVibFBSd3VaMFU5Wgo="
-const code = "W0e20Yrn6gcOEWIHfMcWavlfeAlPdO"
+
+const encodedclientid = "enteryour encoded id here"
+const code = "<auth code here>"
 
 
 const getAccessToken= (code,encodedClientId,callback)=>{
