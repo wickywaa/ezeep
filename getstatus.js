@@ -7,7 +7,7 @@ const printjob = "ezprnds-p00000O:HP420:1"
 
 getStatus = (authkey,jobid)=>{
 
-
+   // must be uri encoded or you will receive an error
     const encodedJobId = encodeURIComponent(jobid)
 
 
