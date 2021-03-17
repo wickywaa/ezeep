@@ -13,7 +13,6 @@ const encodedID = 'UkhFWlJmN2FmUUJsSlo2QnpTelE3SkhJWFZ3T2J2ckpHWVZuSnh0MAoKOg=='
 
 const refreshToken =''
 
-const sedhoid = "YkdKcThpeXlWUzlYTUliQnB0YXFad0pZV2JrWWVFT252NnIzU2Z3VDo="
 
 
 
@@ -25,14 +24,12 @@ const sedhoid = "YkdKcThpeXlWUzlYTUliQnB0YXFad0pZV2JrWWVFT252NnIzU2Z3VDo="
 
  const fullfilepath = path.normalize(filetoupload)
 
- console.log(" here is the file path",fullfilepath)
-
 
 
  
 
 
-
+// use the auth code to retrieve access and refresh token
 
 const getAccessToken= (code,encodedClientId,callback)=>{
 
@@ -67,6 +64,8 @@ const getAccessToken= (code,encodedClientId,callback)=>{
 }
 
 
+// will receive a list of availabel printers in an array
+
 const getPrinters = (token,callback)=>{
 
    var config= {
@@ -89,6 +88,9 @@ const getPrinters = (token,callback)=>{
 
 
 }
+
+
+//  prepare an upload by creating a blob in microsoft azure, you will receive the sas uri and the fileid, you will need these for the uloading a file to azure
 
 
 const prepareUpload = (token,callback)=>{
@@ -116,7 +118,7 @@ const prepareUpload = (token,callback)=>{
 
 }
 
-
+// send a file to azure by using the sas uri as the endpoint
 
 const uploadFile = (sas,file1,callback) =>{
 
@@ -157,7 +159,8 @@ const uploadFile = (sas,file1,callback) =>{
 
 }
 
-
+// print the file 
+// you will receive a printjob id
 const printfile=(printerid,fileid,token,callback)=>{
 
     const testprinterid = "wrjfoewjrofiewjrpofjwrefijewprf"
@@ -206,6 +209,8 @@ callback(response)
 }
 
 
+// get status of the printjob remember to uri encode the print job id 
+
 const getstatus= (printJobId,token,callback)=>{
 
         const encodedjobid = encodeURIComponent(printJobId)
@@ -246,6 +251,9 @@ const getstatus= (printJobId,token,callback)=>{
 }
 
 
+
+
+// callback chain to use all requests in one call. 
 
 const printDocument= (code,encodedID,filepath,callback)=>{
 
