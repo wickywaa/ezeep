@@ -1,5 +1,4 @@
 var axios = require('axios');
-var FormData = require('form-data');
 var qs = require('qs')
 
 const encodedID = 'UkhFWlJmN2FmUUJZuSnh0MAoKOg=='
